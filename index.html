@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animation Website</title>
+
+<style>
+  :root {
+    --primary-color: #3498db;
+    --secondary-color: #e74c3c;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+
+  .container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  header {
+    background-color: green;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .button {
+    padding: 10px 20px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .button:hover {
+    background-color: var(--secondary-color);
+    animation: bounce 0.5s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  footer {
+    background-color: green;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .animation-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+
+  .airplane {
+    position: absolute;
+    top: 50px;
+    left: -100px;
+    transform: translateX(0) translateY(-50%);
+    width: 120px;
+    height: auto;
+    animation: fly 50s linear infinite;
+  }
+
+  .cloud {
+    position: absolute;
+    right: 0;
+    nav-up: auto;
+    width: 80px;
+    height: auto;
+    animation: float 50s linear infinite;
+  }
+
+  .balloon {
+    position: absolute;
+    left: 0;
+    nav-right: auto;
+    width: 80px;
+    height: auto;
+    animation: float 50s linear infinite;
+  }
+
+
+  @keyframes fly {
+    0% {
+      transform: translateX(0) translateY(-50%);
+    }
+    100% {
+      transform: translateX(100vw) translateY(-50%);
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+    <div style="background-image: url('https://i.postimg.cc/XqnRD7QM/grass.jpg');">
+  <div class="container">
+    <header>
+      <h1>Animation Website</h1>
+    </header>
+    <main>
+      <h2>Welcome</h2>
+      <p>Click the button below for an animation!</p>
+      <button class="button">Animate Me</button>
+      <div class="animation-container">
+        <img class="airplane" src="https://i.postimg.cc/FRMJ3zg4/plane.png" alt="Airplane">
+        <img class="cloud" src="https://i.postimg.cc/1z4sGZHR/cloud.png" alt="Cloud">
+        <img class="balloon" src="https://i.postimg.cc/FKLrQ6xG/balloon.png" alt="balloon">
+        <img class="cloud" src="https://i.postimg.cc/1z4sGZHR/cloud.png" alt="Cloud">
+        <img class="balloon" src="https://i.postimg.cc/FKLrQ6xG/balloon.png" alt="balloon">
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 Animation Website. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
